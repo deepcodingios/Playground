@@ -614,14 +614,3 @@ print("UnpairedNumber is \(unpairedNumber)")
  }
  
  */
-
-//func sampleMethod(inputArray:[Int]) -> Int {
-//
-//    var num = 0
-//
-//    for number in inputArray {
-//        num = num ^ number
-//    }
-//
-//    return num
-//}
