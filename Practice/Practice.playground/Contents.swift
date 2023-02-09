@@ -2,6 +2,19 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Creating Enums
+
+enum Weekday{
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+var day = Weekday.monday
+print(day)
+
 //Creating Set
 let people = Set(["Pradeep","Pradeep","pradeep","Sahithi","Nandhan","Apple","Sri","sri"])
 print(people.count)
