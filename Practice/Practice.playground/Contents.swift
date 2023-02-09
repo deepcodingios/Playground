@@ -2,6 +2,59 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+for i in 1...100{
+    
+    if i.isMultiple(of: 3){
+        print("Fizz")
+    }else if i.isMultiple(of: 5){
+        print("Buzz")
+    }else if (i.isMultiple(of: 3) && i.isMultiple(of: 5)){
+        print("Buzz")
+    }
+    else{
+        print(i)
+    }
+    
+}
+enum Weather {
+    case sun, rain, wind, snow, unknown
+}
+
+//Terinary Operator
+let hour = 23
+
+let timeCheck = hour < 20 ? "InTime" : "Out Of Time"
+
+let forecast = Weather.sun
+
+switch forecast{
+case .sun:
+    print("Rain")
+    break
+case .rain:
+    print("Rain")
+case .wind:
+    print("Wind")
+case .snow:
+    print("Snow")
+case .unknown:
+    break
+}
+
+//CheckPoint 2
+
+let array = ["Pradeep","Sahithi","Nandhan","Sri","Pradeep"]
+print(array.count)
+let unique = Set(array)
+
+
+let userName:String
+
+//Type Inference
+
+let names: Set<Double> = Set([1])
+print(names)
+
 //Creating Enums
 
 enum Weekday{
@@ -53,6 +106,4 @@ let bThings = nThings.reduce(""){"\($0)\($1)"}
 //protocol TUI{
 //    func add(x1:)
 //}
-
-let value1 = "\("test".count)"
 
