@@ -2,6 +2,10 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Creating Set
+let people = Set(["Pradeep","Pradeep","pradeep","Sahithi","Nandhan","Apple","Sri","sri"])
+print(people.count)
+
 let val = 5.0 + 10
 
 typealias Thing = [String:Any]
