@@ -621,3 +621,32 @@ print("UnpairedNumber is \(unpairedNumber)")
 
 /*End of Function*/
 /*---------------------------------------------------------------------------------------------------------------*/
+
+//1. Creation of object literals,
+
+
+//2. Accessing data out of objects,
+
+
+//3. Modifying objects,
+
+
+//4. Nesting Arrays & Objects,
+
+
+//5. Loops introduction,
+
+
+//6. Infinite loops,
+
+
+//7. Looping over arrays,
+
+
+//8. Nested loops,
+
+
+//9. Break Keyword,
+
+
+//10. Iterating over objects"
