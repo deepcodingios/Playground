@@ -2,6 +2,73 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+enum PasswordError:Error{
+    case short, obvious
+}
+
+enum SquareRootError:Error{
+    case outOfBounds,noRoot
+}
+
+func checkSquareRoot(number:Int) throws -> String{
+    
+    if(number < 1 || number > 10000){
+        throw SquareRootError.outOfBounds
+    }
+    
+    var startIndex = 1;
+    
+    var endIndex = number/2;
+    
+    var answer = 0;
+    
+    while(startIndex <= endIndex){
+        
+        var middleIndex = startIndex + ((endIndex - startIndex)/2);
+        
+        if(number == middleIndex*middleIndex){
+            print("SquareRoot is \(middleIndex)")
+            return String(middleIndex)
+        }
+        else if(middleIndex*middleIndex <= number){
+            answer = middleIndex
+            startIndex = middleIndex + 1;
+        }else{
+            endIndex = middleIndex - 1;
+        }
+    }
+    
+    print("SquareRoot is \(answer)")
+    return String(answer);
+    
+}
+
+do {
+    try checkSquareRoot(number: 220)
+}
+catch{
+        print("Error checking Square Root")
+}
+
+
+
+func checkPassword(_ password:String) throws -> String{
+    
+    if (password.count < 5){
+        throw PasswordError.short
+    }
+    
+    if(password == "12345"){
+        throw PasswordError.obvious
+    }
+    
+    if password.count < 8{
+        return "OK"
+    }else{
+        return "Excellent"
+    }
+}
+
 for i in 1...100{
     
     if i.isMultiple(of: 3){
