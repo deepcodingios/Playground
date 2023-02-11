@@ -2,6 +2,106 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Structs - 11 Feb 2023
+struct Album{
+    let title:String
+    let artist: String
+    let year:Int
+    
+    func printSummary(){
+        print("\(title) \(year) by \(artist)")
+    }
+    
+}
+
+struct Employee {
+    let name: String
+    var vacationAllocated = 20
+    var vacationTaken = 0
+    
+    //Getter and Setter
+    var vacationRemaining:Int{
+        get{
+            vacationAllocated - vacationTaken
+        }
+        set{
+            vacationTaken + newValue
+        }
+    }
+    
+    mutating func takeVacation(days:Int){
+        if(vacationRemaining > days){
+            vacationRemaining -= days
+            print("Enjoy your Holidays!")
+        }else{
+            print("Oops! Can't take Vacation")
+        }
+    }
+}
+
+struct Player{
+    let name:String
+    let number:Int
+    
+    init(name:String) {
+        
+        self.name = name
+        number = Int.random(in: 1...100)
+    }
+}
+
+let player = Player(name: "Sachin")
+print(player.number)
+
+var pradeep = Employee(name: "Pradeep",vacationAllocated: 20)
+
+let sahithi = Employee(name: "Sahithi")
+
+pradeep.takeVacation(days: 19)
+
+
+//CheckPoint 5
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+
+
+//Closures - 11 Feb 2023
+
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
+}
+
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
+
+func greetUser() {
+    print("Hi there!")
+}
+
+let sayHello = {
+    
+    print("Hi There")
+}
+
+sayHello
+
+greetUser()
+
+var greetCopy = greetUser
+
+
 enum PasswordError:Error{
     case short, obvious
 }
