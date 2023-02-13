@@ -2,6 +2,77 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Classes - 13 Feb 2023
+
+class Vehicle{
+    let isElectric:Bool
+    
+    init(isElectric:Bool) {
+        
+        self.isElectric = isElectric
+    }
+}
+
+class Car:Vehicle{
+    let isConvertible:Bool
+    
+    init(isConvertible:Bool,isElectric:Bool) {
+        self.isConvertible = isConvertible
+        super.init(isElectric: isElectric)
+    }
+    
+    func details(){
+        if isConvertible {
+            print("This is a convertible car")
+        }else{
+            print("This is not a convertible car")
+        }
+        
+        if isElectric{
+            print("This is Electric Car")
+        }else{
+            print("This is not Electric Car")
+        }
+        
+    }
+}
+
+let tesla = Car(isConvertible: false, isElectric: false)
+print(tesla.details())
+
+class Company{
+    let hours:Int
+    
+    init(hours:Int) {
+        self.hours = hours
+    }
+    
+    func printSummary() {
+        print("I work \(hours) hours a day.")
+    }
+}
+
+class Developer:Company{
+    func work(){
+        print("I have tons of code to cover")
+    }
+    
+    override func printSummary(){
+        
+    }
+}
+
+final class Manager:Company{
+    func work(){
+        print("I have tons of meetings to cover")
+    }
+}
+
+let nandhan = Developer(hours: 10)
+print( nandhan.work())
+print(nandhan.printSummary())
+
+
 //Structs - 11 Feb 2023
 struct Album{
     let title:String
@@ -11,7 +82,6 @@ struct Album{
     func printSummary(){
         print("\(title) \(year) by \(artist)")
     }
-    
 }
 
 struct Employee {
