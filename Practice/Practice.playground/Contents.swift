@@ -2,6 +2,35 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Demonstration of Deinitialiser of a class
+
+class User{
+    let id:Int
+    
+    init(id:Int) {
+        self.id = id
+        print("User \(id) is alive!")
+    }
+    
+    deinit {
+        print("I am Dead!")
+    }
+}
+
+var users = [User]()
+
+for i in 1...3{
+    let user = User(id: i)
+    print("User \(user.id) is in control!")
+    users.append(user);
+}
+
+print("Loop is finished")
+users.removeAll()
+print("Array is clear")
+
+
+
 //Classes - 13 Feb 2023
 
 class Vehicle{
