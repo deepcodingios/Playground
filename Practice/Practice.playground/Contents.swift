@@ -2,10 +2,63 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-//Demonstration of Deinitialiser of a class
+//Checkpoint_7 - 14 Feb 2023
+class Animal{
+    var legs:Int
+    
+    init(legs:Int) {
+        self.legs = legs
+    }
+}
+
+class Dog:Animal{
+    
+    func speak(){
+        print("Bow Bow.... Bow.. Bow!!!")
+    }
+}
+
+class Corgi:Dog{
+    override func speak(){
+        print("Bowww Bowww.... Bowww.. Bowww!!!")
+    }
+}
+class Poodle:Dog{
+    override func speak(){
+        print("Bowwwww Bowwwwww.... Bowwwww.. Bowwwww!!!")
+    }
+}
+
+class Cat:Animal{
+    
+    //Defining the Initialiser in a subclass
+    var isTame:Bool
+    init(legs:Int,isTame:Bool) {
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak(){
+        print("Meow Meow.... Meow.. Meow!!!")
+    }
+}
+
+class Persian:Cat{
+    override func speak(){
+        print("Crroooooo.....")
+    }
+}
+class Lion:Cat{
+    override func speak(){
+        print("Grrrrrrr!!!!!")
+    }
+}
+
+
+//Demonstration of Deinitialiser of a class - 14 Feb 2023
 
 class User{
-    let id:Int
+    var id:Int
     
     init(id:Int) {
         self.id = id
@@ -13,9 +66,14 @@ class User{
     }
     
     deinit {
-        print("I am Dead!")
+        print("\(id) is Dead!")
     }
 }
+
+var user = User(id: 2)
+//user.id = 3
+user = User(id: 4)
+print(user.id)
 
 var users = [User]()
 
