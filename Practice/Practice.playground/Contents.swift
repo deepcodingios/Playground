@@ -2,6 +2,36 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Checkpoint 8
+
+protocol Building{
+    var numberOfRooms: Int{get set}
+    var cost:Int {get}
+    var nameOfAgent:String {get}
+    
+    func printSalesSummary()
+}
+
+struct House:Building{
+    var nameOfAgent: String
+    var numberOfRooms: Int
+    var cost: Int
+    
+    func printSalesSummary() {
+        print("\(numberOfRooms) are present in this building. The total cost of House is \(cost)")
+    }
+}
+
+struct Office:Building{
+    var nameOfAgent: String
+    var numberOfRooms: Int
+    var cost: Int
+    
+    func printSalesSummary() {
+        print("\(numberOfRooms) are present in this building. The total cost of House is \(cost)")
+    }
+}
+
 //Extensions - 15 Feb 2023
 
 struct User2:Comparable{
