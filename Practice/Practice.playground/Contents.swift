@@ -2,6 +2,49 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+//Protocols
+protocol Vehicle{
+    
+    var name:String {get}
+    var currentPassengers:Int { get set }
+    
+    func estimateTime(for distance:Int) -> Int
+    func travel(distance:Int)
+}
+
+struct Car:Vehicle{
+    var name: String
+    var currentPassengers: Int
+    
+    func estimateTime(for distance: Int) -> Int {
+        distance/60
+    }
+    
+    func travel(distance: Int) {
+        print("I am driving \(distance) Kms")
+    }
+}
+
+func getTravelEstimates(using vehicles:[Vehicle], distance:Int){
+    for vehicle in vehicles {
+        let estimate = vehicle.estimateTime(for: distance)
+        print("\(vehicle.name): \(estimate) hours to travel \(distance) km")
+    }
+}
+
+func commute(distance:Int, using vehicle:Car){
+    if vehicle.estimateTime(for: distance) > 100 {
+            print("That's too slow! I'll try a different vehicle.")
+        } else {
+            vehicle.travel(distance: distance)
+        }
+}
+
+let car = Car(name: "Kia Sonet", currentPassengers: 5)
+commute(distance: 100, using: car)
+
+getTravelEstimates(using: [car], distance: 150)
+
 //Checkpoint_7 - 14 Feb 2023
 class Animal{
     var legs:Int
@@ -90,7 +133,7 @@ print("Array is clear")
 
 
 //Classes - 13 Feb 2023
-
+/*
 class Vehicle{
     let isElectric:Bool
     
@@ -126,6 +169,7 @@ class Car:Vehicle{
 
 let tesla = Car(isConvertible: false, isElectric: false)
 print(tesla.details())
+ */
 
 class Company{
     let hours:Int
