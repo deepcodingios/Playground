@@ -2,7 +2,35 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-//Protocols
+//Extensions - 15 Feb 2023
+
+struct User2:Comparable{
+    let name:String
+}
+
+let user1 = User2(name: "Pradeep")
+let user2 = User2(name: "Sahithi")
+
+func <(lhs:User2,rhs:User2) -> Bool{
+    user1.name < user2.name
+}
+
+//let user1 = User(name: "Pradeep")
+//let user2 = User(name: "Sahithi")
+print(user1 < user2)
+print(user1 == user2)
+print(user1 != user2)
+
+extension Numeric{
+    func squared() -> Self{
+        self*self
+    }
+}
+
+let number = 10.5;
+print(number.squared())
+
+//Protocols - 14 Feb 2023
 protocol Vehicle{
     
     var name:String {get}
