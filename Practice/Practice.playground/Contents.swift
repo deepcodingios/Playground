@@ -2,7 +2,41 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-//Checkpoint 8
+//Optionals - 15 Feb 2023
+
+let nameArray = ["Pradeep","Sahithi"]
+
+let chosen = nameArray.randomElement()?.uppercased()
+
+func square(number:Int) -> Int{
+    number * number
+}
+
+var no:Int?
+square(number: no ?? 1)
+
+var myVar: Int? = 3
+
+if let unwrapped = myVar{
+    print("Run if myVar has a value inside")
+}
+
+//guard let unwrapped = myVar else{
+//    print("Run if myVar has a value inside")
+//    return
+//}
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+        
+        // 1: We *must* exit the function here
+        return
+    }
+    
+    // 2: `number` is still available outside of `guard`
+        print("\(number) x \(number) is \(number * number)")
+}
+//Checkpoint 8 - Feb 15 2023
 
 protocol Building{
     var numberOfRooms: Int{get set}
