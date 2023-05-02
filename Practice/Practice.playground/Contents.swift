@@ -1,5 +1,56 @@
 import UIKit
 
+
+
+enum Weather {
+    case sunny
+    case cloudy
+    case windy(speed: Int)
+}
+
+let today: Weather = .windy(speed: 10)
+
+switch today {
+case .sunny, .cloudy:
+    print("It's not that windy")
+case .windy(let speed) where speed >= 10:
+    print("It's very windy")
+default:
+    print("It's a bit windy")
+}
+
+let num = UInt.min
+
+enum Direction: CaseIterable {
+    case north, south, east, west
+}
+
+let first = ["Sulaco", "Nostromo"]
+let second = ["X-Wing", "TIE Fighter"]
+let third = first + second
+
+print(Direction.allCases.count)
+
+
+var numbers = [1, 2, 3]
+numbers += [4]
+
+let i = "5"
+let j = i + i
+
+let names = ["Serenity", "Sulaco", "Enterprise", "Galactica"]
+
+for name in names where name.hasPrefix("S") {
+    print(name)
+}
+
+let number = 16.0
+print("\(number) squared is \(number * number), and its square root is \(sqrt(number))")
+
+let oneMillion = 1_000_000
+let oneThousand = oneMillion / 0_1_0_0_0
+print(oneThousand)
+
 var greeting = "Hello, playground"
 
 //Optionals - 15 Feb 2023
@@ -17,7 +68,7 @@ square(number: no ?? 1)
 
 var myVar: Int? = 3
 
-if let unwrapped = myVar{
+if myVar != nil{
     print("Run if myVar has a value inside")
 }
 
@@ -168,6 +219,7 @@ class Cat:Animal{
     
     //Defining the Initialiser in a subclass
     var isTame:Bool
+    
     init(legs:Int,isTame:Bool) {
         self.isTame = isTame
         super.init(legs: legs)
